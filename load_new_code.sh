@@ -1,7 +1,6 @@
 #!/bin/bash
 echo "Getting current container id..." &&\
 ID=$(sudo docker ps | grep embassy | awk '{printf $1}') && \
-echo "Kill id $ID" && \
 sudo docker kill $ID && \
 echo "Beginning build of new container..." && \
 sudo docker build -t embassy/app . && \
