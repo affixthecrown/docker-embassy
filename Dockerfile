@@ -10,6 +10,8 @@ RUN useradd -m app
 ADD src/Obl-web/modules /usr/local/lib/perl/5.14.2/Obl
 
 #add share
+RUN rm -Rf /var/www
+RUN mkdir /var/www
 ADD share /var/www
 
 #and start apache
