@@ -9,9 +9,10 @@ RUN useradd -m app
 #add the perl source
 ADD src/Obl-web/modules /usr/local/lib/perl/5.14.2/Obl
 
-#add the JS....._
+#add share
+ADD share /var/www
 
 #and start apache
 EXPOSE 80
-ENTRYPOINT ["/usr/sbin/apachectl"]
-CMD ["-D","FOREGROUND"]
+#ENTRYPOINT ["/usr/sbin/apachectl"]
+#CMD ["-D","FOREGROUND"]
