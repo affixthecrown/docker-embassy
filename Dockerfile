@@ -14,7 +14,9 @@ RUN rm -Rf /var/www
 RUN mkdir /var/www
 ADD share /var/www
 
+#volumes
+#VOLUME ["/home/ubuntu/images","/var/www/images"]
 #and start apache
 EXPOSE 80
-#ENTRYPOINT ["/usr/sbin/apachectl"]
-#CMD ["-D","FOREGROUND"]
+ENTRYPOINT ["/usr/sbin/apachectl"]
+CMD ["-D","FOREGROUND"]
